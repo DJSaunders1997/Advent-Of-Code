@@ -6,20 +6,6 @@ class datastream_reader:
         pass
 
     @staticmethod
-    def look_for_end_marker(datastream: str) -> int:
-
-        for i in range(len(datastream)):
-            marker_start = i
-            marker_end = i + 4
-
-            potential_marker = datastream[marker_start:marker_end]
-
-            if len(set(potential_marker)) == 4:
-                print(f"{potential_marker}: is our marker.")
-                print(f"First character position after marker {marker_end}")
-                return marker_end
-
-    @staticmethod
     def look_for_marker(datastream: str, num_distinct: int) -> int:
         """Looks through datastream for the first occurance of num_distinct characters.
 
